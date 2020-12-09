@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from user_api_app import views
+from blog.views import index
 
 
 router = routers.DefaultRouter()
@@ -29,5 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    path('', index ),
+    path('blog/update/(?P<id>[0-9]{2})/', index, name='update' ),
 
 ]

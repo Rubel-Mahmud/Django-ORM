@@ -1,0 +1,38 @@
+body{
+    background:#ddd;
+    padding-top:50px;
+}
+
+.blog{
+    width:860px;
+    margin:0px auto;
+}
+.blogLeft h3, .blogRight h3{
+
+border-bottom: 1px solid #ddd;
+
+padding-bottom: 5px;
+}
+.blogLeft{
+    width:350px;
+    background:#fff;
+    padding:0px 30px 15px 30px;
+    float:left;
+}
+.blogRight{
+    width:350px;
+    background:#fff;
+    padding:0px 30px 15px 30px;
+    float:right;
+}
+
+.blogRight {}
+
+input[type='text']{
+    padding:4px 7px;
+    width:200px;
+}
+input[type='submit']{
+    padding:4px 7px;
+}
+

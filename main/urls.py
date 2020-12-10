@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from user_api_app import views
+from blog.views import index
 
 
 router = routers.DefaultRouter()
@@ -27,8 +28,7 @@ router.register(r'groups', views.GroupViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', include(router.urls)),
+    path('users/', include(router.urls)),
     path('auth-api/', include('rest_framework.urls', namespace='rest_framework')),
-
-    #path('blog/', include('blog.urls')),
+    path('', index, name='index'),
 ]

@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}" />
+</head>
+<body>
+{% block content %}
+    <!--Others templates extends this block-->
+{% endblock %}
+</body>
+</html>

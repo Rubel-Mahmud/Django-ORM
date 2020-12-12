@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from django.http import HttpResponseRedirect
 from .models import Blog
 
 
@@ -17,3 +18,13 @@ def index(request):
     return render(request, 'blog/index.html', {
         'message':message, 'context':context
     })
+
+
+def Delete(request, id):
+    try:
+        blog = Blog.objects.get(pk=id)
+        blog.delete()
+    except blog.DoesnotExist:
+        return HttpResponse('blog object doesnot exist.')
+
+    return HttpResponseRedirect('/')

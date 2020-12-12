@@ -22,7 +22,7 @@ from user_api_app import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-from blog.views import index
+from blog.views import index, delete
 
 
 urlpatterns = [
@@ -31,5 +31,5 @@ urlpatterns = [
     path('users/', include(router.urls)),
     path('auth-api/', include('rest_framework.urls', namespace='rest_framework')),
     path('', index, name='index'),
-
+    path('^blog/delete/(?P<id>\d+)/$', delete, name='delete'),
 ]

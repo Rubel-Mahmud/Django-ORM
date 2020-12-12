@@ -10,8 +10,11 @@
             {% csrf_token %}
             <input type="text" name="name" ><br><br>
             <input type="text" name="tagline" ><br><br>
-            <input type="submit" value="submit"><br>
+            <input type="submit" value="Add"><br>
         </form>
+        <div class="message">
+            <p>{{ message }}</p>
+        </div>
     </div>
     <div class="blogRight">
         <h3>Blog List</h3>

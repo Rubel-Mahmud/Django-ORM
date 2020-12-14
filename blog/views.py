@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
-from .models import Blog
+from .models import Blog, Comment
 
 
 def index(request):
@@ -35,4 +35,22 @@ def item_detail(request, id):
     item = Blog.objects.get(pk=id)
     return render(request, 'blog/item_detail.html', {
         'item':item, 'context':context
+    })
+
+
+def comments(request, id):
+    message = ''
+    context = Blog.objects.all().order_by('-id')
+    item = Blog.objects.get(pk=id)
+    if request.method == 'POST':
+        comment = request.POST.get('comment')
+        if comment != '' and comment != None:
+            addComment = Comment(blog=item, caption=comment)
+            addComment.save()
+            return HttpResponseRedirect('/blog/item/' + str(id))
+        else:
+            message = "You didn't type anything."
+
+    return render(request, 'blog/comments.html', {
+        'context':context, 'item':item, 'message':message
     })

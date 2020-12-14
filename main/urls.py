@@ -22,7 +22,7 @@ from user_api_app import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-from blog.views import index, delete, item_detail
+from blog.views import index, delete, item_detail, comments
 
 
 urlpatterns = [
@@ -34,4 +34,5 @@ urlpatterns = [
     path('blog/delete/<int:id>/', delete, name='delete'),
     #path('blog/delete/(?P<id>\d+)/', delete, name='delete'),
     path('blog/item/<int:id>/', item_detail, name='item_detail'),
+    path('blog/item/<int:id>/comments/', comments, name='comments'),
 ]

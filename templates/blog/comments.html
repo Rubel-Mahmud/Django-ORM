@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ item.name }} Details {% endblock title %}
+{% block title %}Comments Page{% endblock title %}
 
 {% block content %}
 <div class="blog">
@@ -11,21 +11,18 @@
         <ul>
             <li style="list-style:none;margin-left:-40px;">
                 <address>{{ item.tagline }}</address><br>
-                <a href="{% url 'comments' item.id %}">
-                    <button value="Button">comments</button>
-                </a>
+                <form method="POST">
+                    <input type="text" name="comment"/>
+                    <input type="submit" value="submit">
+                    {% csrf_token %}
+                </form>
+                {% if message != '' %}
+                    <p style="color:red;">{{ message }}</p>
+                {% endif %}
             </li>
         </ul>
     </div>
-<!---
-    <div class="blogItemRight">
-    <h3>Recent Post :</h3>
-        {% for li in context %}
-            {% if forloop.counter < 11 %}
-                <a href="{% url 'item_detail' li.id %}">{{ forloop.counter }}-{{ li.tagline }}</a><br>
-            {% endif %}
-        {% endfor %}
-    </div>-->
+
     <div class="blogItemRight">
         <h3>Recent Post :</h3>
         {% for li in context|slice:':10' %}

@@ -30,3 +30,11 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.headline
+
+
+class Comment(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    caption = models.TextField()
+
+    def __str__(self):
+        return self.blog.name

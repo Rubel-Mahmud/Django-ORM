@@ -12,7 +12,7 @@
             <li style="list-style:none;margin-left:-40px;">
                 <address>{{ item.tagline }}</address><br>
                 <form method="POST">
-                    <input type="text" name="comment"/>
+                    <input type="text" name="comment" required />
                     <input type="submit" value="submit">
                     {% csrf_token %}
                 </form>

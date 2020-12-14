@@ -8,12 +8,12 @@
         <h3>Add Blog</h3>
         <form method="POST">
             {% csrf_token %}
-            <input type="text" name="name" ><br><br>
-            <input type="text" name="tagline" ><br><br>
+            <input type="text" name="name" required ><br><br>
+            <input type="text" name="tagline" required ><br><br>
             <input type="submit" value="Add"><br>
         </form>
         <div class="message">
-            <p>{{ message }}</p>
+            <p style="color:red;">{{ message }}</p>
         </div>
     </div>
     <div class="blogRight">

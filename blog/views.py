@@ -33,8 +33,9 @@ def delete(request, id):
 def item_detail(request, id):
     context = Blog.objects.all().order_by('-id')
     item = Blog.objects.get(pk=id)
+    comments = Comment.objects.all().filter(blog=item)
     return render(request, 'blog/item_detail.html', {
-        'item':item, 'context':context
+        'item':item, 'context':context, 'comments':comments
     })
 
 

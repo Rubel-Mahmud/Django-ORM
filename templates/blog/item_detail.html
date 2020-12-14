@@ -16,6 +16,13 @@
                 </a>
             </li>
         </ul>
+        <div class="comment">
+            {% for comment in comments %}
+                <ul>
+                    <li>{{ comment.caption }}</li>
+                </ul>
+            {% endfor %}
+        </div>
     </div>
 <!---
     <div class="blogItemRight">

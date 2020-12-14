@@ -20,7 +20,7 @@ def index(request):
     })
 
 
-def Delete(request, id):
+def delete(request, id):
     try:
         blog = Blog.objects.get(pk=id)
         blog.delete()
@@ -28,3 +28,11 @@ def Delete(request, id):
         return HttpResponse('blog object doesnot exist.')
 
     return HttpResponseRedirect('/')
+
+
+def item_detail(request, id):
+    context = Blog.objects.all().order_by('-id')
+    item = Blog.objects.get(pk=id)
+    return render(request, 'blog/item_detail.html', {
+        'item':item, 'context':context
+    })

@@ -13,18 +13,28 @@ border-bottom: 1px solid #ddd;
 
 padding-bottom: 5px;
 }
-.blogLeft{
+.blogLeft, .blogItemLeft {
     width: 225px;
     background:#fff;
     padding:0px 30px 15px 30px;
     float:left;
 }
-.blogRight{
+.blogItemLeft{
+    width: 450px;
+}
+.blogRight, .blogItemRight {
     width: 485px;
     background:#fff;
     padding:0px 30px 15px 30px;
     float:right;
 }
+.blogItemRight{
+    width: 250px;;
+}
+.blogItemRight a{
+    margin-bottom:5px;
+}
+.blogItemRight h3, .blogItemLeft h3 {border-bottom: 1px solid #ddd;padding-bottom: 5px;}
 
 .blogRight {}
 .blogRight ul {}

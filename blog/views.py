@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Blog, Comment
 
 
@@ -29,16 +30,16 @@ def delete(request, id):
 
     return HttpResponseRedirect('/')
 
-
+@login_required
 def item_detail(request, id):
     context = Blog.objects.all().order_by('-id')
     item = Blog.objects.get(pk=id)
-    comments = Comment.objects.all().filter(blog=item)
+    comments = Comment.objects.all().filter(blog=item).order_by('-id')
     return render(request, 'blog/item_detail.html', {
         'item':item, 'context':context, 'comments':comments
     })
 
-
+@login_required
 def comments(request, id):
     message = ''
     context = Blog.objects.all().order_by('-id')

@@ -19,6 +19,10 @@
         <div class="comment">
             {% for comment in comments %}
                 <ul>
+                    <!-- here comment.author.username return a string within the username.
+                    and the dot 0 mean show only first character
+                    https://docs.djangoproject.com/en/dev/ref/templates/api/#variables-and-lookups-->
+                    <span>{{ comment.author.username.0|capfirst }}</span>
                     <li>{{ comment.caption }}</li>
                 </ul>
             {% endfor %}

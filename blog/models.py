@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Blog(models.Model):
     name = models.CharField(max_length=100)
@@ -31,9 +31,19 @@ class Entry(models.Model):
     def __str__(self):
         return self.headline
 
-
+"""
 class Comment(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    caption = models.TextField()
+
+    def __str__(self):
+        return self.blog.name"""
+
+
+class Comments(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     caption = models.TextField()
 
     def __str__(self):

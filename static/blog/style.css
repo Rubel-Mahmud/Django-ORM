@@ -22,6 +22,15 @@ padding-bottom: 5px;
 .blogItemLeft{
     width: 485px;
 }
+.blogItemLeft input[type='submit']{
+    border: 0px;
+    background-position: center center;
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+    background-color: #fff;
+    margin: 5px;
+}
 .blogRight, .blogItemRight {
     width: 485px;
     background:#fff;
@@ -48,31 +57,28 @@ input[type='text']{
 input[type='submit']{
     padding:4px 7px;
 }
-
 .comment{}
-.comment ul{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    outline: 0px;
-}
-.comment ul li{
-    background: #F1EDED;
-    margin-bottom: 8px;
-    padding: 15px 15px;
-    border-radius: 13px;
-    width: 28vw;
-    float: right;
-}
 
-.comment ul span{
+.commentGroup{
+    margin-bottom: 5px;
+}
+.commentUser{
     background: #F1EDED;
-    margin-bottom: 8px;
-    font-size:30px;
+    float: left;
+    margin-right: 5px;
+    width: 3vw;
+    padding: 4px;
+    height: 7vh;
     border-radius: 100%;
-    float:left;
-    width:3vw;
-    height:6vh;
-    padding:5px 0px 5px 10px;
 }
+.commentUser p{padding: 0px 0px 0px 14px;font-weight: bold;color: green;}
 
+.caption{
+    background: #F1EDED;
+    padding: 6px 15px;
+    float: left;
+    width: 29vw;
+    border-radius: 15px;
+    margin-bottom:10px;
+}
+.caption p{}

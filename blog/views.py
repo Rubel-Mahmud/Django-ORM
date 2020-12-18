@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Blog, Comments
+from blog.forms import BlogAddForm
 
 
 def index(request):
@@ -19,6 +20,16 @@ def index(request):
     context = Blog.objects.all().order_by('-id')
     return render(request, 'blog/index.html', {
         'message':message, 'context':context
+    })
+
+
+def addBlog(request):
+    if request.method == 'POST':
+        form = BlogAddForm(request.POST)
+    else:
+        form = BlogAddForm()
+    return render(request, 'blog/add.html', {
+        'form':form
     })
 
 

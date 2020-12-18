@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from user_api_app import views
+from django.conf import settings
+from django.conf.urls.static import static
+from blog.views import addBlog
 
 
 router = routers.DefaultRouter()
@@ -35,4 +38,8 @@ urlpatterns = [
     #path('blog/delete/(?P<id>\d+)/', delete, name='delete'),
     path('blog/item/<int:id>/', item_detail, name='item_detail'),
     path('blog/item/<int:id>/comments/', comments, name='comments'),
+    path('blog/add/', addBlog, name='add')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

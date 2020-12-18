@@ -1,5 +1,5 @@
 # Django-ORM
-Django-ORM is a Blog project that stored such bolog's list, Author list and details. It has three models called Blog, Author, Entry.This project covered django ORM's popular and important concepts.
+Django-ORM is a Blog project that stored such bolog's list, Author list and details. It has three models called Blog, Author, Entry.Any user can create, update and delete blog post.User also can comment and like in post.This project covered django ORM's popular and important concepts.
 
 INSTALLATION :
   * clone this project and setup your python virtual environment

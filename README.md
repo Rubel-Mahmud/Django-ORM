@@ -5,6 +5,7 @@ INSTALLATION :
   * clone this project and setup your python virtual environment
   * Activate virtual emvironment and install the requirements using : pip install -r requirements.txt
   * Create migrations, migrate and run the server using : 
+     
       python manage.py makemigrations
       python manage.py migrate
       python manage.py runserver

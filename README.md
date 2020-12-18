@@ -7,7 +7,10 @@ INSTALLATION :
   * Create migrations, migrate and run the server using : 
      
       python manage.py makemigrations
+      
       python manage.py migrate
+      
       python manage.py runserver
       
-      And enter the url--> 127.0.0.1:8000 in browser.
+    
+  And enter the url--> 127.0.0.1:8000 in browser.
